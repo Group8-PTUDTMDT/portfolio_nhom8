@@ -1,1 +1,136 @@
 
+/* PHAN CSS CUA TIN
+/* 1. Box model: width/height bao gom ca padding va border */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* 2. Bo cuc chung cua trang */
+html {
+    background-color: #ffffff;
+}
+
+body {
+    max-width: 1000px;
+    min-height: 100vh;
+    margin: 0 auto;
+    padding: 0 0 85px; /* Chua khoang trong cho footer fixed */
+    background-color: #f3f4f8;
+    color: #26304a;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* 3. Header: thanh tieu de mau xanh dam */
+header {
+    width: 100%;
+    padding: 18px 16px;
+    background-color: #1a237e;
+    color: #ffffff;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+/* 4. Khung noi dung: can giua, gioi han chieu rong */
+main {
+    width: calc(100% - 32px);
+    max-width: 760px;
+    margin: 24px auto 36px;
+}
+
+/* The hien cac phan duoi dang the (card) giong hinh mau */
+main > .kttcn,
+main > .kkn,
+main > .kda {
+    margin-bottom: 18px;
+    padding: 22px 26px;
+    border: 1px solid #e6e8f0;
+    border-radius: 10px;
+    background-color: #ffffff;
+    box-shadow: 0 3px 12px rgba(26, 35, 126, 0.08);
+}
+
+/* 5. Khoi thong tin ca nhan */
+.kttcn::after {
+    content: "";
+    display: block;
+    clear: both; /* Khong de anh float de len khoi ke tiep */
+}
+
+.kttcn .avt {
+    display: block;
+    float: left;
+    width: 132px;
+    height: 132px;
+    margin: 0 22px 8px 0;
+    border: 3px solid #1a237e;
+    border-radius: 50%;
+    background-color: #e8eaf2;
+    object-fit: cover;
+}
+
+.kttcn h2 {
+    margin: 0 0 8px;
+    color: #1a237e;
+    font-size: 24px;
+}
+
+.kttcn p {
+    margin: 0 0 8px;
+}
+
+/* 6. Tieu de cua cac khoi: chi can chinh bo cuc.
+   Mau the ky nang (.tkn), form va footer do thanh vien CSS phan 2 lam. */
+.kkn h2,
+.kda h2 {
+    margin: 0 0 14px;
+    color: #1a237e;
+    font-size: 21px;
+}
+
+/* 7. Responsive: bo cuc gon gang tren dien thoai */
+@media (max-width: 600px) {
+    header {
+        padding: 16px 12px;
+    }
+
+    header h1 {
+        font-size: 24px;
+    }
+
+    main {
+        width: calc(100% - 24px);
+        margin: 16px auto 28px;
+    }
+
+    main > .kttcn,
+    main > .kkn,
+    main > .kda {
+        margin-bottom: 14px;
+        padding: 18px 16px;
+    }
+
+    .kttcn {
+        text-align: center;
+    }
+
+    .kttcn .avt {
+        float: none;
+        width: 120px;
+        height: 120px;
+        margin: 0 auto 14px;
+    }
+
+    .kttcn h2 {
+        font-size: 22px;
+    }
+}
+
