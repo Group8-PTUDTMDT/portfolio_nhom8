@@ -68,9 +68,6 @@
         <label for="fullname">Họ và tên:</label><br>
         <input type="text" id="fullname" name="fullname"
                placeholder="Nhập họ tên"><br><br>
-			   
-		<label for="birthday">Ngày sinh:</label><br>
-        <input type="date" id="birthday" name="birthday"><br><br>
 
         <label for="email">Email:</label><br>
         <input type="text" id="email" name="email"
@@ -131,7 +128,6 @@
 
             var fullname = document.getElementById("fullname");
             var email = document.getElementById("email");
-            var birthday = document.getElementById("birthday");
             var message = document.getElementById("message");
 
             var isValid = true;
@@ -154,36 +150,6 @@
             } else {
                 clearError(email);
             }
-
-            // ANH THY: Kiểm tra ngày sinh và tuổi
-            if (birthday.value === "") {
-                showError(birthday, "Vui lòng nhập ngày sinh.");
-                isValid = false;
-            } else {
-
-                var birthDate = new Date(birthday.value);
-                var today = new Date();
-
-                var age = today.getFullYear() - birthDate.getFullYear();
-                var month = today.getMonth() - birthDate.getMonth();
-
-                // Nếu chưa tới sinh nhật năm nay thì trừ 1 tuổi
-                if (
-                    month < 0 ||
-                    (month === 0 && today.getDate() < birthDate.getDate())
-                ) {
-                    age--;
-                }
-
-                // ANH THY: Kiểm tra đủ 18 tuổi
-                if (age < 18) {
-                    showError(birthday, "Bạn phải đủ 18 tuổi.");
-                    isValid = false;
-                } else {
-                    clearError(birthday);
-                }
-            }
-
 
             // ANH THY: Kiểm tra nội dung tin nhắn không được để trống
             if (message.value.trim() === "") {
