@@ -5,6 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio cá nhân</title>
     <link rel="stylesheet" href="style.css">
+	<style>
+        /* ANH THY: CSS cho thông báo lỗi của JavaScript */
+        .error-message {
+            display: block;
+            color: red;
+            font-size: 14px;
+            margin-top: 4px;
+        }
+    </style>
 </head>
 
 <body>
@@ -17,10 +26,10 @@
         <div class="kttcn">
 
             <img src="images/avatar.jpg"
-                 alt="Ảnh đại diện của Nguyễn Văn A"
+                 alt="Ảnh đại diện của Nguyễn Thị A"
                  class="avt">
-            <h2>Nguyễn Văn A</h2>
-            <p>Sinh viên Hệ thống thông tin quản lý - UEH</p>
+            <h2>Nguyễn Thị A</h2>
+            <i>Sinh viên Hệ thống thông tin quản lý - UEH</i>
             <p>
                 Đam mê lập trình web, luôn học hỏi
                 công nghệ mới và muốn trở thành
@@ -36,9 +45,164 @@
             <span class="tkn bootstrap-tag">Bootstrap</span>
             <span class="tkn responsive-tag">Responsive</span>
         </div>
-        <!-- Phần Dự án và Form sẽ ghép vào đây -->
+       <div class="kda">
+        <h2>HTML (Phần 2: Dự án, Form & Footer)</h2>
+
+        <h3>Dự án 1</h3>
+        <p>.............</p>
+        <a href="https://github.com/">Xem dự án</a>
+
+        <h3>Dự án 2</h3>
+        <p>..................</p>
+        <a href="https://github.com/">Xem dự án</a>
+
+        <h3>Dự án 3</h3>
+        <p>..............................</p>
+        <a href="https://github.com/">Xem dự án</a>
+    </div>
+
+    <!-- PHẦN FORM LIÊN HỆ -->
+    <h2>Liên hệ với tôi</h2>
+
+    <form id="contactForm">
+        <label for="fullname">Họ và tên:</label><br>
+        <input type="text" id="fullname" name="fullname"
+               placeholder="Nhập họ tên"><br><br>
+			   
+		<label for="birthday">Ngày sinh:</label><br>
+        <input type="date" id="birthday" name="birthday"><br><br>
+
+        <label for="email">Email:</label><br>
+        <input type="text" id="email" name="email"
+               placeholder="Nhập email"><br><br>
+        
+        <label for="message">Nội dung tin nhắn bạn muốn gửi:</label><br>
+        <textarea id="message" name="message"
+                  rows="5" placeholder="Nhập tin nhắn"></textarea><br><br>
+
+        <button type="submit" class="submit">Gửi</button>
+    </form>  <!-- Phần Dự án và Form sẽ ghép vào đây -->
     </main>
-    <!-- Phần Footer sẽ ghép vào đây -->
+   
+    <footer class="fixed-footer">
+        <p>&copy; 2026 Bản quyền thuộc về tôi.</p>
+    </footer> <!-- Phần Footer sẽ ghép vào đây -->
+<body>
+
+    <!-- =====================================================
+         JAVASCRIPT - NHIỆM VỤ CỦA ANH THY
+         Kiểm tra dữ liệu Form liên hệ
+         ===================================================== -->
+
+    <script>
+        // ANH THY: Lấy Form liên hệ
+        var contactForm = document.getElementById("contactForm");
+
+
+        // ANH THY: Hàm hiển thị thông báo lỗi
+        function showError(input, message) 
+		{
+            var error = input.parentElement.querySelector(".error-message");
+
+            if (!error) {
+                error = document.createElement("span");
+                error.className = "error-message";
+                input.parentElement.appendChild(error);
+            }
+
+            error.textContent = message;
+            input.style.border = "2px solid red";
+        }
+
+
+        // ANH THY: Hàm xóa thông báo lỗi
+        function clearError(input) {
+            var error = input.parentElement.querySelector(".error-message");
+
+            if (error) {
+                error.textContent = "";
+            }
+
+            input.style.border = "";
+        }
+
+        // ANH THY: Kiểm tra Form khi nhấn nút Gửi
+        contactForm.addEventListener("submit", function(event) {
+
+            var fullname = document.getElementById("fullname");
+            var email = document.getElementById("email");
+            var birthday = document.getElementById("birthday");
+            var message = document.getElementById("message");
+
+            var isValid = true;
+
+            // ANH THY: Kiểm tra họ tên không được để trống
+            if (fullname.value.trim() === "") {
+                showError(fullname, "Vui lòng nhập họ tên.");
+                isValid = false;
+            } else {
+                clearError(fullname);
+            }
+
+            // ANH THY: Kiểm tra Email phải có ký tự @
+            if (email.value.trim() === "") {
+                showError(email, "Vui lòng nhập Email.");
+                isValid = false;
+            } else if (email.value.indexOf("@") === -1) {
+                showError(email, "Email phải có ký tự @.");
+                isValid = false;
+            } else {
+                clearError(email);
+            }
+
+            // ANH THY: Kiểm tra ngày sinh và tuổi
+            if (birthday.value === "") {
+                showError(birthday, "Vui lòng nhập ngày sinh.");
+                isValid = false;
+            } else {
+
+                var birthDate = new Date(birthday.value);
+                var today = new Date();
+
+                var age = today.getFullYear() - birthDate.getFullYear();
+                var month = today.getMonth() - birthDate.getMonth();
+
+                // Nếu chưa tới sinh nhật năm nay thì trừ 1 tuổi
+                if (
+                    month < 0 ||
+                    (month === 0 && today.getDate() < birthDate.getDate())
+                ) {
+                    age--;
+                }
+
+                // ANH THY: Kiểm tra đủ 18 tuổi
+                if (age < 18) {
+                    showError(birthday, "Bạn phải đủ 18 tuổi.");
+                    isValid = false;
+                } else {
+                    clearError(birthday);
+                }
+            }
+
+
+            // ANH THY: Kiểm tra nội dung tin nhắn không được để trống
+            if (message.value.trim() === "") {
+                showError(message, "Vui lòng nhập nội dung tin nhắn.");
+                isValid = false;
+            } else {
+                clearError(message);
+            }
+
+
+            // ANH THY: Nếu có lỗi thì không gửi Form
+            if (!isValid) {
+                event.preventDefault();
+            } else {
+                alert("Gửi thông tin thành công!");
+                event.preventDefault();
+            }
+        });
+    </script>
+
 </body>
 </html>
-  
