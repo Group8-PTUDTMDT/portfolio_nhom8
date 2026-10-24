@@ -10,14 +10,17 @@
 /* 2. Bo cuc chung cua trang */
 html 
 	{
-		background-color: #ffffff;
+		background-color: #f3f4f8;
+		min-height: 100%;
+    	margin: 0;
+    	padding: 0;
 	}
 
 body 
 	{
 		width: 100%;;
 		min-height: 100vh;
-		margin: 0 auto;
+		margin: 0;
 		padding: 0 0 85px; /* Chua khoang trong cho footer fixed */
 		background-color: #f3f4f8;
 		color: #26304a;
