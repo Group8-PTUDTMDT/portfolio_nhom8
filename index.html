@@ -83,100 +83,81 @@
          Kiểm tra dữ liệu Form liên hệ
          ===================================================== -->
 
-    <script>
-        // ANH THY: Lấy Form liên hệ
-        var contactForm = document.getElementById("contactForm");
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js">
+// ANH THY: Kiểm tra Form liên hệ
+$(document).ready(function () {
 
+    // ANH THY: Hàm hiển thị thông báo lỗi
+    function showError(input, message) {
+        var error = $(input).parent().find(".error-message");
 
-        // ANH THY: Hàm hiển thị thông báo lỗi
-        function showError(input, message) 
-		{
-            var error = input.parentElement.querySelector(".error-message");
-
-            if (error==null) 
-			{
-                error = document.createElement("span");
-                error.className = "error-message";
-                input.parentElement.appendChild(error);
-            }
-
-            error.textContent = message;
-            input.style.border = "2px solid red";
+        if (error.length == 0) {
+            error = $("<span></span>");
+            error.addClass("error-message");
+            $(input).parent().append(error);
         }
 
+        error.text(message);
+        $(input).css("border", "2px solid red");
+    }
 
-        // ANH THY: Hàm xóa thông báo lỗi
-        function clearError(input) 
-		{
-            var error = input.parentElement.querySelector(".error-message");
+    // ANH THY: Hàm xóa thông báo lỗi
+    function clearError(input) {
+        var error = $(input).parent().find(".error-message");
 
-            if (error != null ) 
-			{
-                error.textContent = "";
-            }
-
-            input.style.border = "";
+        if (error.length != 0) {
+            error.text("");
         }
 
-        // ANH THY: Kiểm tra Form khi nhấn nút Gửi
-        contactForm.onsubmit = function(event) 
-		{
-            var fullname = document.getElementById("fullname");
-            var email = document.getElementById("email");
-            var message = document.getElementById("message");
+        $(input).css("border", "");
+    }
 
-            var isValid = true;
+    // ANH THY: Kiểm tra Form khi nhấn nút Gửi
+    $("#contactForm").on("submit", function (event) {
 
-            // ANH THY: Kiểm tra họ tên không được để trống
-            if (fullname.value.trim() == "") 
-			{
-                showError(fullname, "Vui lòng nhập họ tên.");
-                isValid = false;
-            } 
-			else 
-			{
-                clearError(fullname);
-            }
+        var fullname = $("#fullname");
+        var email = $("#email");
+        var message = $("#message");
 
-            // ANH THY: Kiểm tra Email phải có ký tự @
-            if (email.value.trim() == "") 
-			{
-                showError(email, "Vui lòng nhập Email.");
-                isValid = false;
-            } 
-			else if (email.value.indexOf("@") == -1) 
-			{
-                showError(email, "Email phải có ký tự @.");
-                isValid = false;
-            } 
-			else 
-			{
-                clearError(email);
-            }
+        var isValid = true;
 
-            // ANH THY: Kiểm tra nội dung tin nhắn không được để trống
-            if (message.value.trim() == "") 
-			{
-                showError(message, "Vui lòng nhập nội dung tin nhắn.");
-                isValid = false;
-            } 
-			else 
-			{
-                clearError(message);
-            }
+        // ANH THY: Kiểm tra họ tên không được để trống
+        if (fullname.val().trim() == "") {
+            showError(fullname, "Vui lòng nhập họ tên.");
+            isValid = false;
+        } else {
+            clearError(fullname);
+        }
 
+        // ANH THY: Kiểm tra Email phải có ký tự @
+        if (email.val().trim() == "") {
+            showError(email, "Vui lòng nhập Email.");
+            isValid = false;
+        } else if (email.val().indexOf("@") == -1) {
+            showError(email, "Email phải có ký tự @.");
+            isValid = false;
+        } else {
+            clearError(email);
+        }
 
-            // ANH THY: Nếu có lỗi thì không gửi Form
-            if (isValid == false) 
-			{
-                event.preventDefault();
-            } 
-			else 
-			{
-                alert("Gửi thông tin thành công!");
-                event.preventDefault();
-            }
-        };
+        // ANH THY: Kiểm tra nội dung tin nhắn không được để trống
+        if (message.val().trim() == "") {
+            showError(message, "Vui lòng nhập nội dung tin nhắn.");
+            isValid = false;
+        } else {
+            clearError(message);
+        }
+
+        // ANH THY: Nếu có lỗi thì không gửi Form
+        if (isValid == false) {
+            event.preventDefault();
+        } else {
+            alert("Gửi thông tin thành công!");
+            event.preventDefault();
+        }
+    });
+
+});
     </script>
 
 </body>
