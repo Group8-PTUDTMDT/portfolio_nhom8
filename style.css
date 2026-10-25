@@ -292,6 +292,8 @@ main > .kda
     color: #ffffff;
     text-align: center;
     padding: 15px;
+	justify-content: space-between;
+	display: flex;
 }
 
 /* Noi dung footer */
@@ -300,3 +302,6 @@ main > .kda
     margin: 0;
     font-size: 14px;
 }
+.fixed-footer a:hover {
+    color: #b3d9ff;
+    text-decoration: underline;
