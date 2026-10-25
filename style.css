@@ -162,6 +162,26 @@ main > .kda
         font-size: 22px;
     }
 }
+/* ====================
+menu
+===================== */
+/* Gạch dọc bên trái từng mục */
+.menu-item {
+    border-left: 3px solid #1a237e;
+    padding-left: 10px;
+    margin-bottom: 10px;
+}
+
+/* Tiêu đề từng mục */
+.menu-item h3 {
+    color: #1a237e;
+    margin: 0 0 5px;
+}
+
+/* Nội dung bên dưới */
+.menu-item p {
+    margin: 0;
+}
 
 /* =========================================
    CSS PHAN 2: KY NANG, FORM VA FOOTER
@@ -271,6 +291,8 @@ main > .kda
     font-size: 16px;
     font-weight: bold;
     cursor: pointer;
+	display: block;
+    margin: 0 auto;
 }
 
 /* Hieu ung hover cho nut gui */
