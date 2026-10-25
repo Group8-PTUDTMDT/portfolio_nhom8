@@ -110,7 +110,13 @@ main > .kda
 		color: #1a237e;
 		font-size: 21px;
 	}
-
+.error-message 
+{
+	display: block;
+    color: red;
+	font-size: 14px;
+	margin-top: 4px;
+}
 /* 7. Responsive: bo cuc gon gang tren dien thoai */
 @media (max-width: 600px) 
 {
