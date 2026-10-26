@@ -1,170 +1,153 @@
 <!DOCTYPE html>
 <html lang="vi">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio cá nhân</title>
-    <link rel="stylesheet" href="style.css">
-</head>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Portfolio Mini</title>
+		<link rel="stylesheet" href="style.css">
+	</head>
 
-<body>
-    <!-- Tiêu đề trang web -->
-    <header id="top">
-        <h1>Portfolio</h1>
-    </header>
-    <main>
-        <!-- Phần 1: Thông tin cá nhân -->
-        <div class="kttcn">
+	<body>
+		<!-- Tiêu đề -->
+		<header id="top">
+			<h1>Portfolio</h1>
+		</header>
+		<!-- Nội dung chính -->
+		<main>
+			<!-- Thông tin cá nhân -->
+			<div class="kttcn">
+				<img src="images/avatar.jpg" alt="Ảnh đại diện của Nguyễn Thị A" class="avt">
+				<h2>Nguyễn Thị A</h2>
+				<i style="color:#909090">Sinh viên Hệ thống thông tin quản lý - UEH</i>
+				<p>Đam mê lập trình web, luôn học hỏi công nghệ mới và muốn trở thành Frontend Developer.</p>
+			</div>
+			<!-- Kỹ năng -->
+			<div class="kkn">
+				<h2>Kỹ năng</h2>
+				<span class="tkn html-tag">HTML5</span>
+				<span class="tkn css-tag">CSS3</span>
+				<span class="tkn js-tag">JavaScript</span>
+				<span class="tkn bootstrap-tag">Bootstrap</span>
+				<span class="tkn responsive-tag">Responsive</span>
+			</div>
+			<!-- Dự án -->
+			<div class="kda">
+				<h2>Dự án đã làm</h2>
+				
+				<div class="ctda">
+					<h3>Website html tìm hiểu VPN</h3>
+					<p>Ví dụ từ đồ án cuối kì môn Dịch vụ mạng Internet </p>
+					<a href="https://group8-ptudtmdt.github.io/VPN/">Xem dự án</a>
+				</div>
+				
+				<div class="ctda">
+					<h3>Trang portfolio mini</h3>
+					<p>Profile cá nhân với form cập nhật thông tin, kiểm tra tuổi </p>
+					<a href="https://group8-ptudtmdt.github.io/portfolio_nhom8/">Xem dự án</a>
+				</div>
+				
+				<div class="ctda">
+					<h3>Website bán hàng mini </h3>
+					<p>Trang giới thiệu sản phẩm dùng HTML, CSS box model, float và form đặt hàng có validation	</p>
+				</div>
+			</div>
 
-            <img src="images/avatar.jpg"
-                 alt="Ảnh đại diện của Nguyễn Thị A"
-                 class="avt">
-            <h2>Nguyễn Thị A</h2>
-            <i>Sinh viên Hệ thống thông tin quản lý - UEH</i>
-            <p>
-                Đam mê lập trình web, luôn học hỏi
-                công nghệ mới và muốn trở thành
-                Frontend Developer.
-            </p>
-        </div>
-        <!-- Phần 2: Kỹ năng -->
-        <div class="kkn">
-            <h2>Kỹ năng</h2>
-            <span class="tkn html-tag">HTML5</span>
-            <span class="tkn css-tag">CSS3</span>
-            <span class="tkn js-tag">JavaScript</span>
-            <span class="tkn bootstrap-tag">Bootstrap</span>
-            <span class="tkn responsive-tag">Responsive</span>
-        </div>
-       <div class="kda">
-        <h2>HTML (Phần 2: Dự án, Form & Footer)</h2>
-		   
-		<div class="menu-item">
-        <h3>Dự án 1</h3>
-        <p>.............</p>
-        <a href="https://github.com/">Xem dự án</a>
-		</div>
-		   
-		<div class="menu-item">
-        <h3>Dự án 2</h3>
-        <p>..................</p>
-        <a href="https://github.com/">Xem dự án</a>
-		</div>
-		   
-		<div class="menu-item">
-        <h3>Dự án 3</h3>
-        <p>..............................</p>
-        <a href="https://github.com/">Xem dự án</a>
-		</div>
-    </div>
+		<!-- PHẦN FORM LIÊN HỆ -->
+			<div class="klh">
+				<h2>Liên hệ với tôi</h2>
+				<form id="contactForm">
+					<label for="fullname">Họ và tên:</label><br>
+					<input type="text" id="fullname" name="fullname" placeholder="Nhập họ tên">
+					<span id="fullname-error" class="error-message"></span>
+					<br><br>
 
-    <!-- PHẦN FORM LIÊN HỆ -->
-    <h2>Liên hệ với tôi</h2>
+					<label for="email">Email:</label><br>
+					<input type="text" id="email" name="email" placeholder="Nhập email">
+					<span id="email-error" class="error-message"></span>
+					<br><br>
+					
+					<label for="message">Nội dung tin nhắn bạn muốn gửi:</label><br>
+					<textarea id="message" name="message" rows="5" placeholder="Nhập tin nhắn"></textarea>
+					<span id="message-error" class="error-message"></span>
+					<br><br>		  
 
-    <form id="contactForm">
-        <label for="fullname">Họ và tên:</label><br>
-        <input type="text" id="fullname" name="fullname"
-               placeholder="Nhập họ tên"><br><br>
-
-        <label for="email">Email:</label><br>
-        <input type="text" id="email" name="email"
-               placeholder="Nhập email"><br><br>
-        
-        <label for="message">Nội dung tin nhắn bạn muốn gửi:</label><br>
-        <textarea id="message" name="message"
-                  rows="5" placeholder="Nhập tin nhắn"></textarea><br><br>
-
-        <button type="submit" class="submit">Gửi</button>
-    </form>  <!-- Phần Dự án và Form sẽ ghép vào đây -->
-    </main>
-   
-    <footer class="fixed-footer">
-        <p>&copy; 2026 Nguyễn Thị A.|</p>
-		<a href="#top">Về đầu trang </a>
-    </footer> 
-<body>
-
-    <!-- =====================================================
-         JAVASCRIPT - NHIỆM VỤ CỦA ANH THY
-         Kiểm tra dữ liệu Form liên hệ
-         ===================================================== -->
-
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js">
-// ANH THY: Kiểm tra Form liên hệ
-$(document).ready(function () {
-
-    // ANH THY: Hàm hiển thị thông báo lỗi
-    function showError(input, message) {
-        var error = $(input).parent().find(".error-message");
-
-        if (error.length == 0) {
-            error = $("<span></span>");
-            error.addClass("error-message");
-            $(input).parent().append(error);
-        }
-
-        error.text(message);
-        $(input).css("border", "2px solid red");
-    }
-
-    // ANH THY: Hàm xóa thông báo lỗi
-    function clearError(input) {
-        var error = $(input).parent().find(".error-message");
-
-        if (error.length != 0) {
-            error.text("");
-        }
-
-        $(input).css("border", "");
-    }
-
-    // ANH THY: Kiểm tra Form khi nhấn nút Gửi
-    $("#contactForm").on("submit", function (event) {
-
-        var fullname = $("#fullname");
-        var email = $("#email");
-        var message = $("#message");
-
-        var isValid = true;
-
-        // ANH THY: Kiểm tra họ tên không được để trống
-        if (fullname.val().trim() == "") {
-            showError(fullname, "Vui lòng nhập họ tên.");
-            isValid = false;
-        } else {
-            clearError(fullname);
-        }
-
-        // ANH THY: Kiểm tra Email phải có ký tự @
-        if (email.val().trim() == "") {
-            showError(email, "Vui lòng nhập Email.");
-            isValid = false;
-        } else if (email.val().indexOf("@") == -1) {
-            showError(email, "Email phải có ký tự @.");
-            isValid = false;
-        } else {
-            clearError(email);
-        }
-
-        // ANH THY: Kiểm tra nội dung tin nhắn không được để trống
-        if (message.val().trim() == "") {
-            showError(message, "Vui lòng nhập nội dung tin nhắn.");
-            isValid = false;
-        } else {
-            clearError(message);
-        }
-
-        // ANH THY: Nếu có lỗi thì không gửi Form
-        if (isValid == false) {
-            event.preventDefault();
-        } else {
-            alert("Gửi thông tin thành công!");
-            event.preventDefault();
-        }
-    });
-
-});
-    </script>
-
-</body>
+					<button type="submit" class="submit">Gửi tin nhắn</button>
+				</form>  <!-- Phần Dự án và Form sẽ ghép vào đây -->
+			</div>
+		</main>
+		<footer class="footer-fixed">
+		  <p class="footer-text">
+			&copy 2026 <b>Nguyễn Thị A</b> | 
+			<a href="#top" class="vdt">Về đầu trang</a>
+		  </p>
+		</footer>
+		<!-- JS -->
+		<script>
+			var contactForm = document.getElementById("contactForm");
+			// Hien thi thong bao loi
+			function showError(input, message) 
+				{
+					var error = document.getElementById(input.id + "-error");
+					error.textContent = message;
+					input.classList.add("invalid");
+				}
+			// Xoa thong bao loi
+			function clearError(input) 
+				{
+					var error = document.getElementById(input.id + "-error");
+					error.textContent = "";
+					input.classList.remove("invalid");
+				}
+			// Kiem tra khi bam nut Gui
+			contactForm.addEventListener("submit", function(event) 
+				{
+					var fullname = document.getElementById("fullname");
+					var email = document.getElementById("email");
+					var message = document.getElementById("message");
+					var isValid = true;
+					// Kiem tra ho ten
+					if (fullname.value.trim() === "") 
+						{
+							showError(fullname, "Vui lòng nhập họ tên.");
+							isValid = false;
+						} 
+					else 
+						{
+							clearError(fullname);
+						}
+					// Kiem tra email
+					if (email.value.trim() === "") 
+						{
+							showError(email, "Vui lòng nhập Email.");
+							isValid = false;
+						} 
+					else if (email.value.indexOf("@") === -1) 
+						{
+							showError(email, "Email phải có ký tự @.");
+							isValid = false;
+						} 
+					else 
+						{
+							clearError(email);
+						}
+					// Kiem tra noi dung tin nhan
+					if (message.value.trim() === "") 
+						{
+							showError(message, "Vui lòng nhập nội dung tin nhắn.");
+							isValid = false;
+						} 
+					else 
+						{
+							clearError(message);
+						}
+					// Xu ly ket qua
+					event.preventDefault();
+					if (isValid === true) 
+						{
+							alert("Gửi thông tin thành công!");
+							contactForm.reset();
+						}
+				});
+		</script>
+	</body>
 </html>
