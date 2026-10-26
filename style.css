@@ -1,35 +1,31 @@
-/* PHAN CSS CUA TIN
-/* 1. Box model: width/height bao gom ca padding va border */
+/* width/height bao gom ca padding va border */
 *,
 *::before,
 *::after 
 	{
 		box-sizing: border-box;
 	}
-
-/* 2. Bo cuc chung cua trang */
+/* Bo cuc chung cua trang */
 html 
 	{
 		background-color: #f3f4f8;
 		min-height: 100%;
     	margin: 0;
-    	padding: 0;
+    	padding: 0;	
 	}
-
 body 
 	{
 		width: 100%;;
 		min-height: 100vh;
 		margin: 0;
-		padding: 0 0 85px; /* Chua khoang trong cho footer fixed */
+		padding: 0 0 50px; /* Chua khoang trong cho footer fixed */
 		background-color: #f3f4f8;
 		color: #26304a;
 		font-family: Arial, Helvetica, sans-serif;
 		font-size: 16px;
-		line-height: 1.6;
+		line-height: 1.6;	
 	}
-
-/* 3. Header: thanh tieu de mau xanh dam */
+/* Header*/
 header 
 	{
 		width: 100%;
@@ -38,26 +34,23 @@ header
 		color: #ffffff;
 		text-align: center;
 	}
-
 header h1 
 	{
 		margin: 0;
 		font-size: 28px;
 		font-weight: 700;
 	}
-
-/* 4. Khung noi dung: can giua, gioi han chieu rong */
+/* Khung noi dung */
 main 
 	{
 		width: calc(100% - 32px);
 		max-width: 760px;
 		margin: 24px auto 36px;
 	}
-
-/* The hien cac phan duoi dang the (card) giong hinh mau */
-main > .kttcn,
-main > .kkn,
-main > .kda 
+/* The hien cac phan duoi dang the */
+.kttcn,
+.kkn,
+.kda
 	{
 		margin-bottom: 18px;
 		padding: 22px 26px;
@@ -66,15 +59,32 @@ main > .kda
 		background-color: #ffffff;
 		box-shadow: 0 3px 12px rgba(26, 35, 126, 0.08);
 	}
-
-/* 5. Khoi thong tin ca nhan */
+.klh 
+	{
+		width: calc(100% - 32px);
+		max-width: 550px;
+		margin: 24px auto 36px;
+		margin-bottom: 18px;
+		padding: 22px 26px;
+		border: 1px solid #e6e8f0;
+		border-radius: 10px;
+		background-color: #ffffff;
+		box-shadow: 0 3px 12px rgba(26, 35, 126, 0.08);
+	}
+.klh h2 
+	{
+		margin: 0 0 8px;
+		color: #1a237e;
+		font-size: 24px;
+		text-align: center;
+	}
+/* Khoi thong tin ca nhan */
 .kttcn::after 
 	{
 		content: "";
 		display: block;
 		clear: both; /* Khong de anh float de len khoi ke tiep */
 	}
-
 .kttcn .avt 
 	{
 		display: block;
@@ -87,243 +97,169 @@ main > .kda
 		background-color: #e8eaf2;
 		object-fit: cover;
 	}
-
-.kttcn h2 
+.kttcn h2
 	{
-		margin: 0 0 8px;
+		margin: 0 0 1px;
 		color: #1a237e;
 		font-size: 24px;
 	}
-
-.kttcn i 
-	{
-		margin: 0 0 6px;
-		color: #909090;
-	}
-
-/* 6. Tieu de cua cac khoi: chi can chinh bo cuc.
-   Mau the ky nang (.tkn), form va footer do thanh vien CSS phan 2 lam. */
+/*Mau the ky nang, khoi du an, form va footer */
 .kkn h2,
 .kda h2 
 	{
-		margin: 0 0 14px;
+		margin: 0 0 10px;
 		color: #1a237e;
-		font-size: 21px;
+		font-size: 24px;
 	}
-.error-message 
-{
-	display: block;
-    color: red;
-	font-size: 14px;
-	margin-top: 4px;
-}
-/* 7. Responsive: bo cuc gon gang tren dien thoai */
-@media (max-width: 600px) 
-{
-    header 
+/* khoi du an */
+.kda .ctda 
 	{
-        padding: 16px 12px;
-    }
-
-    header h1 
+		border-left: 3px solid #1a237e;
+		padding-left: 10px;
+		margin-bottom: 10px;
+	}
+.kda .ctda h3 
 	{
-        font-size: 24px;
-    }
-
-    main 
+		color: #1a237e;
+		margin: 0 0 5px;
+	}
+.kda .ctda p 
 	{
-        width: calc(100% - 24px);
-        margin: 16px auto 28px;
-    }
-
-    main > .kttcn,
-    main > .kkn,
-    main > .kda 
+		margin: 0;
+	}
+/* THE KY NANG */
+.tkn 
 	{
-        margin-bottom: 14px;
-        padding: 18px 16px;
-    }
-
-    .kttcn 
-	{
-        text-align: center;
-    }
-
-    .kttcn .avt 
-	{
-        float: none;
-        width: 120px;
-        height: 120px;
-        margin: 0 auto 14px;
-    }
-
-    .kttcn h2 
-	{
-        font-size: 22px;
-    }
-}
-/* ====================
-menu
-===================== */
-/* Gạch dọc bên trái từng mục */
-.menu-item {
-    border-left: 3px solid #1a237e;
-    padding-left: 10px;
-    margin-bottom: 10px;
-}
-
-/* Tiêu đề từng mục */
-.menu-item h3 {
-    color: #1a237e;
-    margin: 0 0 5px;
-}
-
-/* Nội dung bên dưới */
-.menu-item p {
-    margin: 0;
-}
-
-/* =========================================
-   CSS PHAN 2: KY NANG, FORM VA FOOTER
-   ========================================= */
-
-/* 1. DINH DANG THE KY NANG */
-
-.tkn {
-    display: inline-block;
-    padding: 8px 15px;
-    margin: 5px;
-    border-radius: 8px;
-    font-size: 14px;
-    font-weight: bold;
-}
-
+		display: inline-block;
+		padding: 8px 15px;
+		margin: 5px;
+		border-radius: 20px;
+		font-size: 14px;
+		font-weight: bold;
+	}
 /* Mau cho tung ky nang */
-
-.html-tag {
-    background-color: #ffe0b2;
-    color: #e65100;
-}
-
-.css-tag {
-    background-color: #bbdefb;
-    color: #1565c0;
-}
-
-.js-tag {
-    background-color: #fff9c4;
-    color: #795548;
-}
-
-.bootstrap-tag {
-    background-color: #e1bee7;
-    color: #6a1b9a;
-}
-
-.responsive-tag {
-    background-color: #c8e6c9;
-    color: #2e7d32;
-}
-
-
-/* 2. DINH DANG FORM LIEN HE */
-
-/* Tieu de form */
-
-#contactForm {
-    background-color: #ffffff;
-    padding: 25px;
-    border: 1px solid #e6e8f0;
-    border-radius: 10px;
-    box-shadow: 0 3px 12px rgba(26, 35, 126, 0.08);
-    margin-top: 15px;
-    margin-bottom: 20px;
-}
-
+	.html-tag 
+		{
+			background-color: #ffe0b2;
+			color: #e65100;
+		}
+	.css-tag 
+		{
+			background-color: #bbdefb;
+			color: #1565c0;
+		}
+	.js-tag 
+		{
+			background-color: #fff9c4;
+			color: #795548;
+		}
+	.bootstrap-tag 
+		{
+			background-color: #e1bee7;
+			color: #6a1b9a;
+		}
+	.responsive-tag 
+		{
+			background-color: #c8e6c9;
+			color: #2e7d32;
+		}
+/* FORM LIEN HE */
 /* Nhan cua cac o nhap */
-
-#contactForm label {
-    display: inline-block;
-    margin-bottom: 5px;
-    font-weight: bold;
-    color: #1a237e;
-}
-
+#contactForm label 
+	{
+		display: inline-block;
+		margin-bottom: 5px;
+		font-weight: bold;
+		color: #1a237e;
+	}
 /* O nhap ho ten va email */
-
-#contactForm input {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #cccccc;
-    border-radius: 6px;
-    font-size: 15px;
-    font-family: Arial, sans-serif;
-}
-
+#contactForm input 
+	{
+		width: 100%;
+		padding: 12px;
+		border: 1px solid #cccccc;
+		border-radius: 6px;
+		font-size: 15px;
+		font-family: Arial, sans-serif;
+	}
 /* O nhap noi dung tin nhan */
-
-#contactForm textarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #cccccc;
-    border-radius: 6px;
-    font-size: 15px;
-    font-family: Arial, sans-serif;
-    resize: vertical;
-}
-
-/* Hieu ung khi bam vao o nhap */
-
+#contactForm textarea 
+	{
+		width: 100%;
+		padding: 12px;
+		border: 1px solid #cccccc;
+		border-radius: 6px;
+		font-size: 15px;
+		font-family: Arial, sans-serif;
+		resize: vertical;
+	}
 #contactForm input:focus,
-#contactForm textarea:focus {
-    outline: none;
-    border-color: #1a237e;
-}
-
+#contactForm textarea:focus 
+	{
+		outline: none;
+		border-color: #1a237e;
+	}
+/* form lỗi */
+#contactForm .error-message 
+	{
+		display: block;
+		color: red;
+		font-size: 14px;
+		margin-top: 4px;
+	}
+#contactForm input.invalid,
+#contactForm textarea.invalid 
+	{
+		border: 2px solid red;
+	}
 /* Nut gui */
+.submit 
+	{
+		background-color: #1a237e;
+		color: white;
+		padding: 12px 200px;
+		border: none;
+		border-radius: 6px;
+		font-size: 16px;
+		font-weight: bold;
+		cursor: pointer;
+		display: block;
+		margin: 0 auto;
+	}
+.submit:hover 
+	{
+		background-color: #3949ab;
+		color: #ffffff;
+	}
 
-.submit {
-    background-color: #1a237e;
-    color: white;
-    padding: 12px 30px;
-    border: none;
-    border-radius: 6px;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-	display: block;
-    margin: 0 auto;
-}
+/* FOOTER */
+.footer-fixed 
+	{
+	  position: fixed;           
+	  bottom: 0;                 
+	  left: 0;                
+	  width: 100%;             
+	  background-color: #1a237e;
+	  color: #ffffff;            
+	  text-align: center;        
+	  padding: 14px;        
+	  font-family: Arial, sans-serif;
+	  font-size: 14px;
+	}
+.footer-text 
+	{
+	  margin: 0;
+	  line-height: 1.5;
+	}
+/* Đường dẫn về đầu trang */
+.vdt 
+	{
+	  color: #82b1ff;            
+	  text-decoration: none;    
+	}
+.vdt:hover 
+	{
+	  text-decoration: underline; 
+	  color: #ffffff;
+	}
 
-/* Hieu ung hover cho nut gui */
-
-.submit:hover {
-    background-color: #3949ab;
-    color: #ffffff;
-}
-
-
-/* 3. DINH DANG FOOTER */
-
-.fixed-footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background-color: #1a237e;
-    color: #ffffff;
-    text-align: center;
-    padding: 15px;
-	justify-content: space-between;
-	display: flex;
-}
-
-/* Noi dung footer */
-
-.fixed-footer p {
-    margin: 0;
-    font-size: 14px;
-}
-.fixed-footer a:hover {
-    color: #b3d9ff;
-    text-decoration: underline;
