@@ -215,22 +215,21 @@ main
 		border: 2px solid red;
 	}
 /* Nut gui */
-.submit 
-	{
-		background-color: #1a237e;
-		color: white;
-		padding: 12px 200px;
-		border: none;
-		border-radius: 6px;
-		font-size: 16px;
-		font-weight: bold;
-		cursor: pointer;
-		display: block;
-		margin: 0 auto;
-		width: 100%;          /* Trải dài vừa vặn theo khung chứa trên điện thoại */
-	  	max-width: 400px;
-		box-sizing: border-box;
-	}
+.submit {
+    background-color: #1a237e;
+    color: white;
+    padding: 12px 24px;       /* Giảm padding ngang lại cho vừa vặn, không bị tràn */
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;           /* Canh giữa nút trong khung chứa */
+    width: 100%;              /* Trải dài theo khung chứa trên điện thoại */
+    max-width: 400px;         /* Không bị quá bè trên màn hình lớn (PC/Tablet) */
+    box-sizing: border-box;   /* Đảm bảo padding không làm cộng dồn kích thước gây vỡ giao diện */
+}
 .submit:hover 
 	{
 		background-color: #3949ab;
