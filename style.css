@@ -227,6 +227,9 @@ main
 		cursor: pointer;
 		display: block;
 		margin: 0 auto;
+		width: 100%;          /* Trải dài vừa vặn theo khung chứa trên điện thoại */
+	  	max-width: 400px;
+		box-sizing: border-box;
 	}
 .submit:hover 
 	{
