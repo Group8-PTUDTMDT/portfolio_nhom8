@@ -15,8 +15,8 @@ html
 	}
 body 
 	{
-		width: 100%;;
-		min-height: 100vh;
+		width: 100%;
+		min-height: 100;
 		margin: 0;
 		padding: 0 0 50px; /* Chua khoang trong cho footer fixed */
 		background-color: #f3f4f8;
@@ -163,6 +163,7 @@ main
 			background-color: #c8e6c9;
 			color: #2e7d32;
 		}
+
 /* FORM LIEN HE */
 /* Nhan cua cac o nhap */
 #contactForm label 
@@ -182,6 +183,7 @@ main
 		font-size: 15px;
 		font-family: Arial, sans-serif;
 	}
+
 /* O nhap noi dung tin nhan */
 #contactForm textarea 
 	{
